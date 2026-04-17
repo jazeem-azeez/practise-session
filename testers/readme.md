@@ -6,6 +6,7 @@ Project: FizzBuzz
 Goal: Master the Red-Green-Refactor cycle.
 Concept: Tests should be small and cover every branch of logic.
 
+```csharp
 public class FizzBuzzTests
 {
     [Theory]
@@ -25,12 +26,14 @@ public class FizzBuzzTests
         result.Should().Be(expected, "because the game rules dictate specific outputs for multiples of 3 and 5");
     }
 }
-
+```
 ------------------------------
 ## Phase 2: The Intermediate (State & Edge Cases)
 Project: Simple Bank Account
 Goal: Handle internal state and exceptions.
 Concept: Use Fluent Assertions to verify that the system fails gracefully.
+
+```csharp
 
 public class BankAccountTests
 {
@@ -62,12 +65,14 @@ public class BankAccountTests
     }
 }
 
+```
 ------------------------------
 ## Phase 3: The Advanced (Dependency Isolation)
 Project: Ticket Booking System
 Goal: Isolate the system under test from external side effects (like emails).
-Concept: Use Moq to verify interactions with dependencies.
+Concept: Use Mock/NSubstitute to verify interactions with dependencies.
 
+```csharp
 public class BookingServiceTests
 {
     [Fact]
@@ -85,6 +90,7 @@ public class BookingServiceTests
         // "Verify" ensures the code actually tried to send the email without needing a real mail server.
     }
 }
+```
 
 ------------------------------
 ## Phase 4: The Expert (The Architecture)
